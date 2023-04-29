@@ -3,11 +3,6 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * 3)];
 }
 
-function capitalize(str) {
-  str = str.toLowerCase();
-  return str[0].toUpperCase() + str.substring(1);
-}
-
 function addScore(result) {
   let scoreDiv = null;
   if (result) {
@@ -68,56 +63,6 @@ function endGame(winner) {
   playerScore.innerText = 0;
   computerScore.innerText = 0;
 }
-
-// No need to validate input with button eventlisteners
-// function validInput(str) {
-//   return choices.includes(str);
-// }
-
-// function game() {
-//   let playerScore = 0;
-//   let computerScore = 0;
-//   let outcome = 0;
-//   let playerSelection = '';
-//   for (let i = 0; i < 5; i++) {
-//     while (true) {
-//       playerSelection = capitalize(prompt('Pick Rock, Paper, or Scissors: '));
-//       if (validInput(playerSelection)) {
-//         break;
-//       }
-//       console.log('Invalid input, try again');
-//     }
-//     outcome = playRound(playerSelection, getComputerChoice());
-//     if (outcome === 1) {
-//       playerScore++;
-//       console.log(
-//         `You won round ${
-//           i + 1
-//         }! Your score: ${playerScore} Computer score: ${computerScore}`
-//       );
-//     } else if (outcome === 2) {
-//       console.log(
-//         `You tied round ${
-//           i + 1
-//         }! Your score: ${playerScore} Computer score: ${computerScore}`
-//       );
-//     } else {
-//       computerScore++;
-//       console.log(
-//         `You lost round ${
-//           i + 1
-//         }! Your score: ${playerScore} Computer score: ${computerScore}`
-//       );
-//     }
-//   }
-//   if (playerScore > computerScore) {
-//     console.log('You Won!');
-//   } else if (playerScore < computerScore) {
-//     console.log('You Lost!');
-//   } else {
-//     console.log('You Tied!');
-//   }
-// }
 
 const buttons = document.querySelectorAll('button');
 buttons.forEach((btn) => btn.addEventListener('click', playRound));
