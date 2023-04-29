@@ -4,6 +4,8 @@ body {
   align-items: center;
   margin: 0;
   min-height: 100vh;
+  color: Ivory;
+  font-family: 'Baskerville';
 }
 
 .content {
@@ -15,4 +17,20 @@ body {
   background-color: rgb(23, 135, 65);
   align-items: center;
   justify-content: center;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 100px;
+}
+
+.player,
+.computer {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.score {
+  font-size: 72px;
 }
