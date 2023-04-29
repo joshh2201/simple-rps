@@ -26,11 +26,26 @@ function playRound() {
     (playerSelection === 'Scissors' && computerSelection === 'Paper')
   ) {
     addScore(document.querySelector('.player>.score'));
+    displayResult(1, playerSelection, computerSelection);
   } else if (playerSelection !== computerSelection) {
     addScore(document.querySelector('.computer>.score'));
+    displayResult(0, playerSelection, computerSelection);
   } else {
-    alert('Tie');
+    displayResult(2, playerSelection, computerSelection);
   }
+}
+
+function displayResult(result, playerSelection, computerSelection) {
+  const resultDiv = document.querySelector('.result');
+  const roundNumber = document.querySelector('span');
+  if (result === 1) {
+    resultDiv.innerText = `You won round ${roundNumber.innerText}! ${playerSelection} beats ${computerSelection}!`;
+  } else if (result === 0) {
+    resultDiv.innerText = `You lost round ${roundNumber.innerText}! ${computerSelection} beats ${playerSelection}!`;
+  } else {
+    resultDiv.innerText = `You tied round ${roundNumber.innerText}! The CPU also picked ${playerSelection}!`;
+  }
+  roundNumber.innerText = parseInt(roundNumber.innerText) + 1;
 }
 
 // No need to validate input with button eventlisteners
