@@ -9,10 +9,20 @@ function capitalize(str) {
   return str[0].toUpperCase() + str.substring(1);
 }
 
-function addScore(div) {
-  div.innerText = parseInt(div.innerText) + 1;
-  if (parseInt(div.innerText) === 5) {
-    console.log('winner');
+function addScore(result) {
+  let scoreDiv = null;
+  if (result) {
+    scoreDiv = document.querySelector('.player>.score');
+  } else {
+    scoreDiv = document.querySelector('.computer>.score');
+  }
+  scoreDiv.innerText = parseInt(scoreDiv.innerText) + 1;
+  if (parseInt(scoreDiv.innerText) === 5) {
+    if (result) {
+      endGame('Player');
+    } else {
+      endGame('CPU');
+    }
   }
 }
 
@@ -25,10 +35,10 @@ function playRound() {
     (playerSelection === 'Paper' && computerSelection === 'Rock') ||
     (playerSelection === 'Scissors' && computerSelection === 'Paper')
   ) {
-    addScore(document.querySelector('.player>.score'));
+    addScore(1);
     displayResult(1, playerSelection, computerSelection);
   } else if (playerSelection !== computerSelection) {
-    addScore(document.querySelector('.computer>.score'));
+    addScore(0);
     displayResult(0, playerSelection, computerSelection);
   } else {
     displayResult(2, playerSelection, computerSelection);
