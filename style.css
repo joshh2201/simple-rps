@@ -15,13 +15,14 @@ body {
   flex-direction: column;
   border-radius: 30px;
   background-color: rgb(23, 135, 65);
-  align-items: center;
-  justify-content: center;
 }
 
 .scoreboard {
   display: flex;
-  gap: 100px;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .player,
@@ -33,4 +34,23 @@ body {
 
 .score {
   font-size: 72px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+button {
+  background-color: ivory;
+  color: rgb(23, 135, 65);
+  padding: 10px 25px;
+  font-size: 20px;
+  font-family: 'Helvetica';
+  font-weight: 700;
+  border: 0;
+  border-radius: 12px;
 }
