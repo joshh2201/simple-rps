@@ -17,10 +17,17 @@ body {
   background-color: rgb(23, 135, 65);
 }
 
+.round {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
 .scoreboard {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 50px;
   margin-right: 50px;
 }
