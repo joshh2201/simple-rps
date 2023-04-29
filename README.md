@@ -1,4 +1,4 @@
-# odin-rps
+# simple-rps
 Welcome to my Rock Paper Scissors project!
 
 This project was built using JavaScript, HTML, and CSS. It features a simple and interactive user interface that allows you to play the classic game of Rock Paper Scissors against the computer.
