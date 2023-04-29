@@ -9,22 +9,34 @@ function capitalize(str) {
   return str[0].toUpperCase() + str.substring(1);
 }
 
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection) {
-    return 2;
-  } else if (
+function addScore(div) {
+  div.innerText = parseInt(div.innerText) + 1;
+  if (parseInt(div.innerText) === 5) {
+    console.log('winner');
+  }
+}
+
+function playRound() {
+  let playerSelection = this.innerText;
+  let computerSelection = getComputerChoice();
+
+  if (
     (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
     (playerSelection === 'Paper' && computerSelection === 'Rock') ||
     (playerSelection === 'Scissors' && computerSelection === 'Paper')
   ) {
-    return 1;
+    addScore(document.querySelector('.player>.score'));
+  } else if (playerSelection !== computerSelection) {
+    addScore(document.querySelector('.computer>.score'));
+  } else {
+    alert('Tie');
   }
-  return 0;
 }
 
-function validInput(str) {
-  return choices.includes(str);
-}
+// No need to validate input with button eventlisteners
+// function validInput(str) {
+//   return choices.includes(str);
+// }
 
 function game() {
   let playerScore = 0;
@@ -71,4 +83,6 @@ function game() {
   }
 }
 
-game();
+const buttons = document.querySelectorAll('button');
+buttons.forEach((btn) => btn.addEventListener('click', playRound));
+// game();
